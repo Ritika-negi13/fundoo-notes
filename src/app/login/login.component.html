@@ -48,9 +48,8 @@
  
                     </div>
                     <div class="button-class">
-                        <button mat-button color=primary class="button">Create account</button>
+                        <button mat-button color=primary class="button"(click)="openNewAccount()">Create account</button>
                         <button mat-raised-button color="primary" class="button button-2">Next</button>
- 
                     </div>
                 </div>
  
@@ -69,14 +68,20 @@
             <button class="footer-button">Terms</button>
         </div>
     </div>
- 
- 
- 
- 
- 
- 
- 
- 
+    
+    <mat-card id="newcard">
+        <div style="display: flex;flex-direction: column;  justify-content: end">
+            <div class="newcarditem">
+                <a [routerLink]="['/register']">For personal use</a>
+            </div>
+            <div class="newcarditem">
+                <a [routerLink]="['/register']">For my child</a>
+            </div>
+            <div class="newcarditem">
+                <a [routerLink]="['/register']">For work and my business</a>
+            </div>
+        </div>
+    </mat-card>
 </body>
  
  

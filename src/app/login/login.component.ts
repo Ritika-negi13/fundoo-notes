@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
+  openNewAccount(){
+    const card = document.getElementById('newcard');
+    if (card) {
+      card.style.display = 'block';
+    }
+  }
 }

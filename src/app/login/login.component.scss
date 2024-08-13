@@ -31,9 +31,9 @@ form{
     font:14px;
 }
  
- 
- 
- 
+a{
+   text-decoration: none;
+}
  
 mat-form-field{
     width:400px;
@@ -134,4 +134,22 @@ span{
 .footer-button:not(:hover){
     background-color: transparent;
  
+}
+
+#newcard{
+    display:none;
+    background-color: #e0e7f1 ;
+    width:220px;
+    position: fixed;
+    right:300px;
+    top:280px;
+    padding:10px;
+    z-index: 1000;
+    color:#1f1f1f;
+    border-radius: 20px;
+}
+.newcarditem{
+    height:30px;
+    padding:7px 0px 2.3px 10px;
+   
 }
