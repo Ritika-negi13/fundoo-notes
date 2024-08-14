@@ -7,7 +7,7 @@ import { BasicinfoComponent } from './basicinfo/basicinfo.component';
 const routes: Routes = [
   {
     path:'',
-    component:RegisterComponent
+    component:LoginComponent
   },
   {
     path:'register',
