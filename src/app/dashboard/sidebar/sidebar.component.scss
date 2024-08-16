@@ -1,0 +1,29 @@
+.sidenav-container{
+    /* border: 1px solid red; */
+    width: 230px;
+    height: auto;
+}
+.element{
+    /* border: 1px solid black; */
+    padding: 20px 0 10px 20px;
+    display: flex;
+    margin-left: 5px;
+    /* margin-top: 10px; */
+   
+}
+.material-icons{
+    margin-right:30px;
+    color: grey;
+}
+.material-symbols-outlined{
+    color: grey;
+    margin-right:30px;
+}
+// .element span{
+//     /* border: 1px solid red; */
+//     // margin-left: 25px;
+
+.element:hover,.element:active,.active{
+    background-color: rgb(241, 203, 131);
+    border-radius: 0 25px 25px 0;
+}
