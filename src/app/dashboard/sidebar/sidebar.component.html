@@ -40,12 +40,12 @@
     </div>
 </div>
 <div class="sidenav-container-icons" *ngIf="flag === 'false'">
-    <div class="element" id="note" (click)="changeColor(this)">
+    <div class="element" id="note" (click)="changeColor(this)" [routerLink]="['/dashboard/notes']">
         <span>
             <i class="material-icons">event_note</i>
         </span>
     </div>
-    <div class="element" id="notifications"  (click)="changeColor(this)">
+    <div class="element" id="notifications"  (click)="changeColor(this)" [routerLink]="['/dashboard/reminders']">
         <span class="material-symbols-outlined">
             notifications
         </span>
