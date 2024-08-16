@@ -17,17 +17,31 @@ import {MatSelectModule} from '@angular/material/select';
 import { BasicinfoComponent } from './basicinfo/basicinfo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox'; 
-
+import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './dashboard/header/header.component';
+import { SidebarComponent } from './dashboard/sidebar/sidebar.component'; 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { OpensidebarService } from './service/opensidebar/opensidebar.service';
+import { NotesComponent } from './dashboard/notes/notes.component';
+import { RemindersComponent } from './dashboard/reminders/reminders.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     BasicinfoComponent,
+    DashboardComponent,
+    HeaderComponent,
+    SidebarComponent,
+    NotesComponent,
+    RemindersComponent,
 
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
@@ -40,10 +54,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatOptionModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatCheckboxModule
-    
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatSidenavModule
   ],
-  providers: [],
+  providers: [OpensidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
