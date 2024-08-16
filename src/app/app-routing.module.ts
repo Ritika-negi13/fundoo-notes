@@ -6,6 +6,8 @@ import { BasicinfoComponent } from './basicinfo/basicinfo.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './dashboard/header/header.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
+import { NotesComponent } from './dashboard/notes/notes.component';
+import { RemindersComponent } from './dashboard/reminders/reminders.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
         path:'sidebar',
         component:SidebarComponent
       },
+      {
+        path:'notes',
+        component:NotesComponent
+      },
+      {
+        path:'reminders',
+        component:RemindersComponent
+      }
     ]
   }
 ];
