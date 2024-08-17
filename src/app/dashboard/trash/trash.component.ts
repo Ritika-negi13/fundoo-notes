@@ -6,7 +6,6 @@ import { HttpclientService } from 'src/app/service/httpclient/httpclient.service
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent {
-
   notesList!:any[];
   constructor(private httpClient:HttpclientService){}
 
