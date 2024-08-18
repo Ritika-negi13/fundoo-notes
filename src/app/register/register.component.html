@@ -26,13 +26,13 @@
           <p>
             <mat-form-field appearance="outline">
               <mat-label>FirstName</mat-label>
-              <input matInput placeholder="" />
+              <input name="firstname" [(ngModel)]="firstname" matInput placeholder="" />
             </mat-form-field>
           </p>
           <p>
             <mat-form-field appearance="outline">
               <mat-label>LastName (optional)</mat-label>
-              <input matInput placeholder="" />
+              <input name="lastname" [(ngModel)]="lastname" matInput placeholder="" />
             </mat-form-field>
           </p>
           <div class="" style="display: flex; justify-content: end; text-align: center; font-weight: 400;" >
