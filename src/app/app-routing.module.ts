@@ -4,10 +4,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { BasicinfoComponent } from './basicinfo/basicinfo.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeaderComponent } from './dashboard/header/header.component';
-import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
+
 import { NotesComponent } from './dashboard/notes/notes.component';
 import { RemindersComponent } from './dashboard/reminders/reminders.component';
+import { TrashComponent } from './dashboard/trash/trash.component';
+import { ArchiveComponent } from './dashboard/archive/archive.component';
 
 const routes: Routes = [
   {
@@ -31,20 +32,20 @@ const routes: Routes = [
     component:DashboardComponent,
     children:[
       {
-        path:'header',
-        component:HeaderComponent
-      },
-      {
-        path:'sidebar',
-        component:SidebarComponent
-      },
-      {
         path:'notes',
-        component:NotesComponent
+        component:NotesComponent,
       },
       {
         path:'reminders',
         component:RemindersComponent
+      },
+      {
+        path:'trash',
+        component:TrashComponent
+      },
+      {
+        path:'archive',
+        component:ArchiveComponent
       }
     ]
   }
