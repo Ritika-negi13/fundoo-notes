@@ -3,8 +3,8 @@
 </head>
 <div class="sidenav-container" *ngIf="flag === 'true'">
     <div class="element" id="note" (click)="changeColor(this)" [routerLink]="['/dashboard/notes']">
-        <span>
-            <i class="material-icons">event_note</i>
+        <span class="material-symbols-outlined">
+            lightbulb
         </span>
         <span>Notes</span>
     </div>
@@ -26,13 +26,13 @@
         </span>
         <span>Edit labels</span>
     </div>
-    <div class="element" id="note" (click)="changeColor(this)">
+    <div class="element" id="note" (click)="changeColor(this)" [routerLink]="['/dashboard/archive']">
         <span class="material-symbols-outlined">
             archive
         </span>
         <span>Archive</span>
     </div>
-    <div class="element" id="note" (click)="changeColor(this)">
+    <div class="element" id="note" (click)="changeColor(this)" [routerLink]="['/dashboard/trash']">
         <span class="material-symbols-outlined">
             delete
         </span>
@@ -60,12 +60,12 @@
             edit
         </span>
     </div>
-    <div class="element" id="note" (click)="changeColor(this)">
+    <div class="element" id="note" (click)="changeColor(this)" [routerLink]="['/dashboard/archive']">
         <span class="material-symbols-outlined">
             archive
         </span>
     </div>
-    <div class="element" id="note" (click)="changeColor(this)">
+    <div class="element" id="note" (click)="changeColor(this)" [routerLink]="['/dashboard/trash']">
         <span class="material-symbols-outlined">
             delete
         </span>
