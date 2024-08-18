@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-<div>
+<div class="CreateNote">
     <span>
     <input mat-input>
     </span>
@@ -16,4 +16,14 @@
             image
         </span>
     </span>
+</div>
+<div style="display:flex; flex-wrap: wrap; gap: 30px;">
+    <mat-card style="width:200px;height:200px" *ngFor="let note of notesList">
+        <div>
+            {{note.title}}
+        </div>
+        <div>
+            {{note.description}}
+        </div>
+    </mat-card>
 </div>
