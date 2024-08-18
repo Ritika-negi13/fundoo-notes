@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
  
+import { HttpClientModule } from '@angular/common/http'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -26,6 +27,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { OpensidebarService } from './service/opensidebar/opensidebar.service';
 import { NotesComponent } from './dashboard/notes/notes.component';
 import { RemindersComponent } from './dashboard/reminders/reminders.component';
+import { HttpclientService } from './service/httpclient/httpclient.service';
+import { TrashComponent } from './dashboard/trash/trash.component';
+import { ArchiveComponent } from './dashboard/archive/archive.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +42,8 @@ import { RemindersComponent } from './dashboard/reminders/reminders.component';
     SidebarComponent,
     NotesComponent,
     RemindersComponent,
-
+    TrashComponent,
+    ArchiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,9 +62,10 @@ import { RemindersComponent } from './dashboard/reminders/reminders.component';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule
   ],
-  providers: [OpensidebarService],
+  providers: [OpensidebarService,HttpclientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
