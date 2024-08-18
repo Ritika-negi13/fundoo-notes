@@ -27,13 +27,13 @@
                     <div>
                         <div>
                             <mat-form-field ngClass="focus-field" appearance="outline" color=primary>
-                                <mat-label>Email or phone</mat-label>
-                                <input matInput placeholder="Email" [formControl]="emailFormControl"[errorStateMatcher]="matcher">
+                                <mat-label [(ngModel)]="email">Email or phone</mat-label>
+                                <input matInput #myInput placeholder="Email" [formControl]="emailFormControl"[errorStateMatcher]="matcher">
                                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                                 Please enter a valid email address
                                 </mat-error>
                                 <mat-error *ngIf="emailFormControl.hasError('required')">
-                                Email is <strong>required</strong>
+                                    <strong>Email is required</strong>
                                 </mat-error>
                             </mat-form-field>
                         </div>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="button-class">
                         <button mat-button color=primary class="button"(click)="openNewAccount($event)">Create account</button>
-                        <button mat-raised-button color="primary" class="button button-2">Next</button>
+                        <button mat-raised-button color="primary" class="button button-2" (click)="openDashboard()">Next</button>
                     </div>
                 </div>
  
