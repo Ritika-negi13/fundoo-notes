@@ -2,6 +2,8 @@ import { Component,ViewChild,ElementRef } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { HttpclientService } from '../service/httpclient/httpclient.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -19,7 +21,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginComponent {
   email='';
   password='';
-  constructor(private router:Router){}
+  constructor(private router:Router,private httpClient:HttpClient,private http:HttpclientService){}
   openNewAccount(e : Event){
     e.preventDefault();
     //@ts-ignore
@@ -36,10 +38,21 @@ export class LoginComponent {
       this.myInputElement.nativeElement.focus();
     }, 1000);
   }
-
+  
   openDashboard() {
     console.log(this.email);
     console.log(this.password);
-    this.router.navigate(['/dashboard']);
+    this.http.validateLogin({"email":this.email,"password":this.password}).subscribe({
+      next:(res:any)=>{
+        const{id}=res;
+        console.log(res);
+        localStorage.setItem("access_token",id);
+        this.router.navigate(['/dashboard']);
+      },error(err:any){
+        console.log(err);
+      }
+
+  });
+    // this.router.navigate(['/dashboard']);
   }
 }
