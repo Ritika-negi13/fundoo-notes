@@ -8,6 +8,6 @@ export class HttpclientService {
   constructor(private http:HttpClient) { }
   getAllNotes(){
     console.log("working")
-    return this.http.get("https://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList?access_token=bb7Pl5YLGSCAFo0mOVlkP7LWtjysIlNLtBVHxqJWgwGReCEiaJqa9xIJS8JpfWzu") 
+    return this.http.get("https://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList?access_token=ARODMBkNgPeEIbNCwX0WolphSA4MDUU5joqXifgXtrqf1UU6FuUHHjIdxE8VMN4U") 
   }
 }
