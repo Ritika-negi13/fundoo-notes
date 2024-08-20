@@ -17,7 +17,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 
 export class LoginComponent {
-  email!:string;
+  email='';
+  password='';
   constructor(private router:Router){}
   openNewAccount(e : Event){
     e.preventDefault();
@@ -37,7 +38,8 @@ export class LoginComponent {
   }
 
   openDashboard() {
+    console.log(this.email);
+    console.log(this.password);
     this.router.navigate(['/dashboard']);
   }
-
 }

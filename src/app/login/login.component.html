@@ -27,28 +27,21 @@
                     <div>
                         <div>
                             <mat-form-field ngClass="focus-field" appearance="outline" color=primary>
-                                <mat-label [(ngModel)]="email">Email or phone</mat-label>
-                                <input matInput #myInput placeholder="Email" [formControl]="emailFormControl"[errorStateMatcher]="matcher">
+                                <mat-label >Email or phone</mat-label>
+                                <input name="email" matInput #myInput placeholder="Email" [(ngModel)]="email" [errorStateMatcher]="matcher">
                                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                                Please enter a valid email address
+                                    Please enter a valid email address
                                 </mat-error>
                                 <mat-error *ngIf="emailFormControl.hasError('required')">
                                     <strong>Email is required</strong>
                                 </mat-error>
                             </mat-form-field>
                         </div>
-                        <div>
-                            <button mat-button color=primary class="blue-button">Forgot email?</button>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="note">
-                            Not your computer? Use Guest mode to sign in privately.
-                        </p>
-                        <div>
-                            <button mat-button color=primary class="blue-button">Learn more about using Guest
-                                mode</button>
-                        </div>
+                        <br>
+                        <mat-form-field ngClass="focus-field" appearance="outline" color=primary>
+                            <mat-label>Password</mat-label>
+                            <input matInput name="password"   [(ngModel)]="password" placeholder="password" >
+                        </mat-form-field>
                     </div>
                     <div class="button-class">
                         <button mat-button color=primary class="button"(click)="openNewAccount($event)">Create account</button>
