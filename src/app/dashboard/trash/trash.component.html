@@ -1,16 +1,19 @@
-<div style="width: 100%;">
+<div>
 <div class="note">
     <span>Notes in trash are deleted after 7 days </span>
     <span style="color: blue;font-weight: 500;"><a>Empty Trash</a></span>
 </div>
 <div style="display:flex; flex-wrap: wrap; gap: 30px;margin-top: 50px;">
-    <mat-card style="width:200px;height:200px" *ngFor="let note of notesList">
+    <mat-card style="width:200px;height:fit-content;padding: 10px;" *ngFor="let note of notesList">
         <div>
             {{note.title}}
         </div>
+        <br>
         <div>
             {{note.description}}
         </div>
+        <br>
+        <br>
     </mat-card>
 </div>
 
