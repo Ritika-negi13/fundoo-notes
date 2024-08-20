@@ -7,6 +7,7 @@ import { HttpclientService } from 'src/app/service/httpclient/httpclient.service
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent {
+  display:boolean=false;
   @Output() title=new EventEmitter();
   notesList!:any[];
   constructor(private httpClient:HttpclientService){}
@@ -30,5 +31,17 @@ export class NotesComponent {
         return item;
       }
     })
+  }
+  opennote(){
+    if(this.display==false)
+      this.display=true;
+    else
+      this.display=false;
+  }
+  opendelete(){
+    
+    console.log("QWERTYUJDFGHJK");
+    //@ts-ignore
+    document.getElementById('delete').style.display=block;
   }
 }
