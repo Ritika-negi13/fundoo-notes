@@ -9,6 +9,7 @@ import { NotesComponent } from './dashboard/notes/notes.component';
 import { RemindersComponent } from './dashboard/reminders/reminders.component';
 import { TrashComponent } from './dashboard/trash/trash.component';
 import { ArchiveComponent } from './dashboard/archive/archive.component';
+import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -30,7 +31,12 @@ const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent,
+    canActivate:[authGuard],
     children:[
+      {
+        path:'',
+        component:NotesComponent,
+      },
       {
         path:'notes',
         component:NotesComponent,
