@@ -21,7 +21,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginComponent {
   email='';
   password='';
-  constructor(private router:Router,private httpClient:HttpClient,private http:HttpclientService){}
+  constructor(private router:Router,private http:HttpclientService){}
   openNewAccount(e : Event){
     e.preventDefault();
     //@ts-ignore
@@ -45,14 +45,13 @@ export class LoginComponent {
     this.http.validateLogin({"email":this.email,"password":this.password}).subscribe({
       next:(res:any)=>{
         const{id}=res;
+        localStorage.setItem("name", res["firstName"]);
         console.log(res);
         localStorage.setItem("access_token",id);
         this.router.navigate(['/dashboard']);
       },error(err:any){
         console.log(err);
       }
-
   });
-    // this.router.navigate(['/dashboard']);
   }
 }
