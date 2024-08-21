@@ -19,12 +19,12 @@
 </div>
 <div class="writeNote" *ngIf="display===true" >
     <div style="display: flex;justify-content: space-between;">
-        <input placeholder="Title" class="input">
+        <input placeholder="Title" class="input"  name="title" [(ngModel)]="title">
         <span class="material-symbols-outlined">
             keep
         </span>
     </div>
-    <input placeholder="Take a note" class="input">
+    <input placeholder="Take a note" class="input" name="description" [(ngModel)]="description" (keypress)="addNote($event)">
     <br>
     <div style="display: flex;justify-content: space-between;">
         <div style="display: flex;justify-content: space-between;width:300px;">
@@ -91,18 +91,17 @@
             <span class="material-symbols-outlined">
                 image
             </span>
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined" (click)="archiveData(this.note)">
                 archive
             </span>
-            <span class="material-symbols-outlined" (mouseover)="opendelete()">
+            <span class="material-symbols-outlined" (click)="opendelete(this.note)">
                 more_vert 
             </span>
-        </div>
-        <div id="delete" >
-            <div>
-                Delete Note
-            </div>
+        </div>   
+    </mat-card>
+    <mat-card id="delete">
+        <div (click)="deleteNote()">
+            Delete Note
         </div>
     </mat-card>
-
 </div>

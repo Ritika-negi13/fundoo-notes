@@ -48,6 +48,9 @@ input{
     display:none;
   
 }
+#box{
+    overflow-x:auto ;
+}
 #box:hover{
     .hideicons{
         display:block;
@@ -62,4 +65,7 @@ input{
     width:auto;
     height:50px;
     display:none;
+    padding:10px;
+    position: relative;
+
 }

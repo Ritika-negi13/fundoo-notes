@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpclientService } from 'src/app/service/httpclient/httpclient.service';
 
 @Component({
@@ -8,10 +8,11 @@ import { HttpclientService } from 'src/app/service/httpclient/httpclient.service
 })
 export class NotesComponent {
   display:boolean=false;
-  @Output() title=new EventEmitter();
   notesList!:any[];
   constructor(private httpClient:HttpclientService){}
-
+  title!:string;
+  description!:string;
+  id!:any;
   ngOnInit(): void {
     this.httpClient.getAllNotes().subscribe({
       next:(res:any)=>{
@@ -26,11 +27,24 @@ export class NotesComponent {
   }
   filterData(){
     this.notesList=this.notesList.filter((item)=>{
-       if(item.isArchived==false || item.isDeleted==false)
+       if(item.isArchived===false && item.isDeleted===false)
       {
         return item;
       }
     })
+  }
+  addNote(event : any) {
+    if(event.key === "Enter") {
+      // api call to add new note
+      this.httpClient.addnewnote(this.title,this.description).subscribe({
+        next:(res:any)=>{
+          console.log(res);
+          window.location.reload();
+        },error(err:any){
+          console.log(err);
+        }
+    });
+    }
   }
   opennote(){
     if(this.display==false)
@@ -38,10 +52,43 @@ export class NotesComponent {
     else
       this.display=false;
   }
-  opendelete(){
-    
-    console.log("QWERTYUJDFGHJK");
+  archiveData(event:any){
+    event.isArchived=true;
+    this.httpClient.editnote(event).subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        window.location.reload();
+      },error(err:any){
+        console.log(err);
+      }
+  });
+  }
+  opendelete(event:any){
     //@ts-ignore
-    document.getElementById('delete').style.display=block;
+    if(document.getElementById('delete').style.display=="block")
+    {
+      //@ts-ignore
+      document.getElementById('delete').style.display="none";
+      this.id='';
+    }
+    else
+    {
+      //@ts-ignore
+      document.getElementById('delete').style.display="block";
+      this.id=event;
+    }
+
+  }
+  deleteNote(){
+    this.id.isDeleted=true;
+    this.httpClient.editnote(this.id).subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        window.location.reload();
+      },error(err:any){
+        console.log(err);
+      }
+  });
   }
 }
+
