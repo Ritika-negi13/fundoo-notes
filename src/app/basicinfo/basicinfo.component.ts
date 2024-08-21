@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService } from '../service/userdata/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-basicinfo',
@@ -15,9 +17,11 @@ export class BasicinfoComponent {
   genders:string[]=[
     'Male','Female','Rather not say','Custom'
   ]
+  username!:string;
+  password!:string;
   classValue='basicinfo';
+  constructor(private data:DataService,private router:Router){}
   changePage(e:Event){
-    console.log(this.classValue);
     e.preventDefault();
     if(this.classValue=='basicinfo')
     {
@@ -26,7 +30,13 @@ export class BasicinfoComponent {
     else
     if(this.classValue=='username')
     {
+      this.data.getusername(this.username)
       this.classValue='password';
+    }
+    else{
+      console.log(this.password)
+      this.data.getpassword(this.password)
+      this.router.navigate(['/login']);
     }
   }
 }
