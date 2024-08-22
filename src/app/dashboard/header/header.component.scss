@@ -3,7 +3,7 @@
     justify-content: space-between;
     background-color: white;
     border-color:solid rgb(139, 138, 138) ;
-    border-bottom: 2px solid black;
+    border-bottom: 2px;
 }
 .keeplogo{
     font-size: 30px;
@@ -25,7 +25,7 @@
     width:500px;
     font-size: 20px;
 }
-.material-icons{
+.material-symbols-outlined{
     color:rgb(139, 138, 138);
     padding: 2px 1px 2px 2px;
     font-size:30px; 
@@ -33,5 +33,13 @@
 }
 .icons{
     display:flex;
+    width: 170px;
     justify-content: space-evenly;
+}
+.profileimg{
+    height:30px;
+    width:30px;
+    border-radius: 50%; 
+    margin-top: 10px;
+    padding: 2px 1px 2px 2px;
 }
