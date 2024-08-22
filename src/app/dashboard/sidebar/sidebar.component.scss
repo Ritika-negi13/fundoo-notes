@@ -4,30 +4,39 @@
     height: auto;
 }
 .sidenav-container-icons{
-    width:70px;
-   
+   width:70px;
+   border-radius: 50%;
+}
+.mainContainer{
+    padding-top: 20px;
 }
 .element{
     /* border: 1px solid black; */
     padding: 20px 0 10px 20px;
     display: flex;
-    margin-left: 5px;
-    /* margin-top: 10px; */
-   
+}
+.elementicons{
+    height:16px;
+    width:16px;
+    margin-top: 5px;
+    padding: 15px;
+    display: flex;
 }
 .material-icons{
-    margin-right:30px;
+    margin-right:20px;
     color: grey;
+    border-radius: 50%;
 }
 .material-symbols-outlined{
     color: grey;
     margin-right:30px;
 }
-// .element span{
-//     /* border: 1px solid red; */
-//     // margin-left: 25px;
+.elementicons:hover,.elementicons:active{
+    background-color: rgb(241, 203, 131);
+    border-radius: 50%;
+}
 
-.element:hover,.element:active,.active{
+.element:hover,.element:active{
     background-color: rgb(241, 203, 131);
     border-radius: 0 25px 25px 0;
 }
