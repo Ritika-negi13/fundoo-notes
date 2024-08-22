@@ -30,6 +30,8 @@ import { RemindersComponent } from './dashboard/reminders/reminders.component';
 import { HttpclientService } from './service/httpclient/httpclient.service';
 import { TrashComponent } from './dashboard/trash/trash.component';
 import { ArchiveComponent } from './dashboard/archive/archive.component';
+import { SearchPipe } from './pipe/searchpipe/search.pipe';
+import { SearchService } from './service/search/search.service';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { ArchiveComponent } from './dashboard/archive/archive.component';
     RemindersComponent,
     TrashComponent,
     ArchiveComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -63,9 +66,9 @@ import { ArchiveComponent } from './dashboard/archive/archive.component';
     MatCheckboxModule,
     MatToolbarModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [OpensidebarService,HttpclientService],
+  providers: [OpensidebarService,HttpclientService,SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
