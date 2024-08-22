@@ -15,7 +15,7 @@ export class SearchPipe implements PipeTransform {
         return dataList;
     }
     search=search.toLowerCase();
-    return dataList.filter((item)=>item.title.toLowerCase().include(search)|| item.title.toLowerCase().include(search));
+    return dataList.filter((item)=>item.title.toLowerCase().includes(search)|| item.description.toLowerCase().includes(search));
   }
 
 }
