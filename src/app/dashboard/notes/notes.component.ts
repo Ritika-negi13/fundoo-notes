@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpclientService } from 'src/app/service/httpclient/httpclient.service';
+import { SearchService } from 'src/app/service/search/search.service';
 
 @Component({
   selector: 'app-notes',
@@ -9,10 +10,11 @@ import { HttpclientService } from 'src/app/service/httpclient/httpclient.service
 export class NotesComponent {
   display:boolean=false;
   notesList!:any[];
-  constructor(private httpClient:HttpclientService){}
+  constructor(private httpClient:HttpclientService,private ss:SearchService){}
   title!:string;
   description!:string;
   id!:any;
+  search!:string;
   ngOnInit(): void {
     this.httpClient.getAllNotes().subscribe({
       next:(res:any)=>{
@@ -24,6 +26,7 @@ export class NotesComponent {
         console.log("err",err);
       }
     })
+    this.ss.search.subscribe(search => this.search = search);
   }
   filterData(){
     this.notesList=this.notesList.filter((item)=>{
